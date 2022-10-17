@@ -1,6 +1,7 @@
 module.exports = {
   mode: "jit",
-  purge: [
+  content: [
+    // هر  فولدر یا فایلی که تیلویند توش باید کار کنه 
     "./assets/**/*.css",
     "./components/*.{vue,js}",
     "./components/**/*.{vue,js}",
