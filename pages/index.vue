@@ -4,8 +4,10 @@
         <div class="box w-4 h-4 bg-green-400">2</div>
         <br><br>
         field :<Form v-slot="{errors}">
-            <Field name="field" :rules="isRequired" />
-            {{errors}}
+            <Field class="" name="field" :rules="isRequired" />
+            <span class="text-red-500">
+                {{errors.field}}
+            </span>
         </Form>
     </div>
 </template>
@@ -14,10 +16,9 @@
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { gsap } from 'gsap'
 export default defineComponent({
-    component: {
+    components: {
         Form,
-        Field,
-        ErrorMessage 
+        Field    
     },
     methods: {
         isRequired (value) {
