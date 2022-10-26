@@ -1,10 +1,12 @@
 <template>
-    <button :class="[`btn btn-${variant}`, { loading: loading }]">
+    <!-- موجودبودvariant یعنی اگه  -->
+    <button :class="{ [`btn btn-${variant}`]: variant !== undefined,  loading: loading }">
         <slot></slot>
     </button>
 </template>
 
 <script setup lang="ts">
+    import {ButtonVariantEnum} from '~/types'
     // const props = defineProps({
     //     variant: {
     //         type: String,
@@ -16,11 +18,10 @@
     //     }
     // })
     interface Props {
-        variant?:string;
+        variant?:ButtonVariantEnum;
         loading?:boolean;
     }
     const props=withDefaults(defineProps<Props>(), {
-        variant: "primary",
         loading: false
     })
 </script>
