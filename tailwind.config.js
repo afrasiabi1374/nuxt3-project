@@ -1,5 +1,6 @@
 module.exports = {
   mode: "jit",
+  // پوشه هایی که به تیل ویند مجازه بخونتشون
   content: [
     "./assets/**/*.css",
     "./components/*.{vue,js}",
